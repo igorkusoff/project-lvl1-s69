@@ -1,0 +1,22 @@
+{
+  "name": "hexlet-brain-games",
+  "version": "0.1.0",
+  "description": "first hexlet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorkusoff/project-lvl1-s69.git"
+  },
+  "keywords": [
+    "hexlet"
+  ],
+  "author": "Igor Kusoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igorkusoff/project-lvl1-s69/issues"
+  },
+  "homepage": "https://github.com/igorkusoff/project-lvl1-s69#readme"
+}
