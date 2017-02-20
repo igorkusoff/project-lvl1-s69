@@ -1,2 +1,5 @@
 # Node and npm files
 node_modules
+
+# npm
+dist
