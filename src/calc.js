@@ -4,13 +4,6 @@ import randomNumber from './random-number';
 
 export default () => {
   const name = askName();
-  const inverseAnswer = (answer) => {
-    if (answer === 'yes') {
-      return 'no';
-    }
-    return 'yes';
-  };
-
   const calc = (operators, count) => {
     if (count > 2) {
       return console.log(`Congratulations, ${name}!`);
@@ -20,23 +13,19 @@ export default () => {
     const operator = operators[count];
     console.log(`Question: ${num1} ${operator} ${num2}`);
     const answer = readlineSync.question('Your answer: ');
+    let result = 0;
     if (operator === '+') {
-    const result = num1 + num2;
+      result = num1 + num2;
     } else if (operator === '-') {
-    const result = num1 - num2;
+      result = num1 - num2;
     } else if (operator === '*') {
-    const result = num1 * num2;
+      result = num1 * num2;
     }
-  if (result === answer) {
+    if (result !== Number(answer)) {
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
+    }
     console.log('Correct!');
     return calc(operators, count + 1);
-  }
-
-  return console.log(`'${answer}' is wrong answer ;(. 
-    Correct answer was '${result}'.\n Let's try again, ${name}!`);
-
   };
-
-  return calc([+, -, *], 0);
+  return calc(['+', '-', '*'], 0);
 };
-
