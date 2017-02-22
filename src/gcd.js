@@ -14,9 +14,9 @@ export default () => {
     const result = getGcd(num1, num2);
     console.log(`Question: ${num1} ${num2}`);
     const answer = readlineSync.question('Your answer: ');
-  if (result !== Number(answer)) {
-  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
-  }
+    if (result !== Number(answer)) {
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
+    }
     console.log('Correct!');
     return iter(count + 1);
   };
