@@ -1,9 +1,13 @@
+import askName from './';
 import readlineSync from 'readline-sync';
 
+//askName();
 export default () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+//  const name = readlineSync.question('May I have your name? ');
+//  console.log(`Hello, ${name}!`);
 
+//askName();
+  const name = askName();
   const inverseAnswer = (answer) => {
     if (answer === 'yes') {
       return 'no';
