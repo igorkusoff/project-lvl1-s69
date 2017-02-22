@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import askName from '..';
+import start from './../even';
 
-console.log('Welcome to the Brain Games!\n');
-askName();
+console.log('Welcome to the Brain Games!\n Answer "yes" if number even otherwise answer "no".\n');
+start();
