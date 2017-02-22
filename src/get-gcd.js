@@ -1,16 +1,17 @@
 // get Greatest common divisor
 export default (a, b) => {
-  if (a === 0 || b ===0) {
+  let x = a;
+  let y = b;
+  if (a === 0 || b === 0) {
     return b;
   } else if (b === 0) {
     return a;
-  } else
-    while (a !== 0 && b !== 0) {
-      if (a >= b && b > 0) {
-        a %= b;
-      } else if (a < b && a > 0) {
-        b %= a;
-      }
+  } while (x !== 0 && y !== 0) {
+    if (x >= y && y > 0) {
+      x %= y;
+    } else if (x < y && x > 0) {
+      y %= x;
     }
-    return a + b;
+  }
+  return x + y;
 };
