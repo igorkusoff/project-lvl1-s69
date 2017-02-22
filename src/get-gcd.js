@@ -1,5 +1,5 @@
 // get Greatest common divisor
-export default () => {
+export default (a, b) => {
   if (a === 0 || b ===0) {
     return b;
   } else if (b === 0) {
