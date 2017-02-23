@@ -1,12 +1,13 @@
 {
   "name": "hexlet-bg-ik",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "first hexlet project",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc": "dist/bin/brain-calc.js",
+"brain-calc": "dist/bin/brain-gcd.js"
   },
   "scripts": {
     "babel-node": "babel-node",
