@@ -1,7 +1,10 @@
 import readlineSync from 'readline-sync';
-import askName from './';
+import askName from './askname';
+import welcome from './';
 
 export default () => {
+  welcome();
+//  const welcome = welcome();
   const name = askName();
   const inverseAnswer = (answer) => {
     if (answer === 'yes') {
