@@ -3,6 +3,11 @@
   "version": "0.2.2",
   "description": "first hexlet project",
   "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
+  },
   "scripts": {
     "babel-node": "babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,10 +41,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "readline-sync": "^1.4.6"
-  },
-  "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.6"
