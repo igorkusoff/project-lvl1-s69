@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import welcome from './';
-import randomNumber from './random-number';
+import welcome from '../';
+import randomNumber from '../random-number';
 
 export default () => {
   welcome();
