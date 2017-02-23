@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
+import welcome from '../';
 import randomNumber from '../random-number';
 import getGcd from '../get-gcd';
 
 export default () => {
+  welcome();
+  console.log('Find the greatest common divisor of given numbers.\n');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   const iter = (count) => {
