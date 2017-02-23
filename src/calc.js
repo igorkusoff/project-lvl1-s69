@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
-import askName from './';
+import welcome from './';
+import askName from './askname';
 import randomNumber from './random-number';
 
 export default () => {
+  welcome();
+  console.log('What is the result of the expression?\n');
   const name = askName();
   const calc = (operators, count) => {
     if (count > 2) {
