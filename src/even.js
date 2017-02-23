@@ -4,7 +4,7 @@ import welcome from './';
 
 export default () => {
   welcome();
-//  const welcome = welcome();
+  console.log('Answer "yes" if number even otherwise answer "no".\n');
   const name = askName();
   const inverseAnswer = (answer) => {
     if (answer === 'yes') {
