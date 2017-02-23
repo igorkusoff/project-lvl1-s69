@@ -1,6 +1,6 @@
 {
   "name": "hexlet-bg-ik",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "first hexlet project",
   "main": "index.js",
   "bin": {
