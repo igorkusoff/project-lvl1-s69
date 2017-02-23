@@ -22,4 +22,3 @@ export default () => {
   };
   return iter(0);
 };
-
