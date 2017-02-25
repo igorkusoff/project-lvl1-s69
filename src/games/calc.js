@@ -25,7 +25,7 @@ const gameFlow = () => {
       return num1 * num2;
     };
     const task = `${String(x)} ${operator} ${String(y)}`;
-    const result = getResult(x, y, operator);
+    const result = String(getResult(x, y, operator));
     return [task, result];
   };
   flow(challenge, game, count);
