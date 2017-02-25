@@ -2,12 +2,13 @@
 import readlineSync from 'readline-sync';
 
 const challenge = '';
-const flow = (challenge, task, result, count) => {
+const flow = (challenge, game, count) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(challenge);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  const questions = (task, result, count) => {
+  const questions = (game, count) => {
+    const [task, result] = game();
     if (count === 0) {
       // success
       return console.log(`Congratulations, ${name}!`);
@@ -17,12 +18,12 @@ const flow = (challenge, task, result, count) => {
 
     if (answer === result) {
       console.log('Correct!');
-      return questions(task, result, count - 1);
+      return questions(game, count - 1);
     }
     // fail
     return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\n Let's try again, ${name}!`);
   };
-return questions(task, result, count);
+return questions(game, count);
 };
 
 export default flow;
