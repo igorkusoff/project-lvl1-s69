@@ -1,32 +1,17 @@
-import readlineSync from 'readline-sync';
-import welcome from '../';
+import flow from '../';
 
-export default () => {
-  welcome();
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  const inverseAnswer = (answer) => {
-    if (answer === 'yes') {
-      return 'no';
-    }
-    return 'yes';
+const gameFlow = () => {
+  const challenge = 'Answer "yes" if number even otherwise answer "no".\n';
+  const count = 3;
+  const game = () => {
+    const isEven = (n) => {
+    const answer = n % 2 === 0 ? 'yes' : 'no';
+    return answer;
+    };
+    const task = Math.floor(100 * Math.random());
+    const result = isEven(task);
+    return [task, result];
   };
-
-  const quest = (numbers, count) => {
-    if (count > 2) {
-      return console.log(`Congratulations, ${name}!`);
-    }
-    const number = numbers[count];
-    console.log(`Question: ${number}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if ((number % 2 === 0 && answer === 'yes') || (number % 2 !== 0 && answer === 'no')) {
-      console.log('Correct!');
-      return quest(numbers, count + 1);
-    }
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${inverseAnswer(answer)}'.\n Let's try again, ${name}!`);
-  };
-
-  return quest([15, 6, 15], 0);
+  flow(challenge, game, count);
 };
+export default gameFlow;
