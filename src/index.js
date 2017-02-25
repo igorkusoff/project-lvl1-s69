@@ -15,7 +15,7 @@ const flow = (challenge, game, count) => {
     console.log(`Question: ${task}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (Number(answer) === result) {
+    if (answer === result) {
       console.log('Correct!');
       return questions(newGame, acc - 1);
     }
