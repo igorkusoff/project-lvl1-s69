@@ -1,8 +1,3 @@
-import { greeting, getName } from '../';
+import flow from '../';
 
-const game = () => {
-  console.log(greeting);
-  getName();
-};
-
-export default game;
+export default flow;
