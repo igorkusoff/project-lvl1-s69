@@ -1,8 +1,8 @@
 import flow from '../';
 
+const challenge = 'What is the result of the expression?';
+const count = 3;
 const gameFlow = () => {
-  const challenge = 'What is the result of the expression?';
-  const count = 3;
   const game = () => {
     const randomOperator = () => {
       const random = Math.floor(Math.random() * ((4 - 1) + 1));
