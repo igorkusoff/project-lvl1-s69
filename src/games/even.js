@@ -1,7 +1,7 @@
 import flow from '../';
 
 const gameFlow = () => {
-  const challenge = 'Answer "yes" if number even otherwise answer "no".\n';
+  const challenge = 'Answer "yes" if number even otherwise answer "no".';
   const count = 3;
   const game = () => {
     const isEven = (n) => {

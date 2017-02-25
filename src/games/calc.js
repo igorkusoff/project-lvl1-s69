@@ -1,7 +1,7 @@
 import flow from '../';
 
 const gameFlow = () => {
-  const challenge = 'What is the result of the expression?\n';
+  const challenge = 'What is the result of the expression?';
   const count = 3;
   const game = () => {
     const randomOperator = () => {

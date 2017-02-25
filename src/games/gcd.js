@@ -1,7 +1,7 @@
 import flow from '../';
 
 const gameFlow = () => {
-  const challenge = 'Find the greatest common divisor of given numbers.\n';
+  const challenge = 'Find the greatest common divisor of given numbers.';
   const count = 3;
   const game = () => {
     const num1 = Math.floor(100 * Math.random());
