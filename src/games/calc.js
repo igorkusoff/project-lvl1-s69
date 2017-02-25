@@ -1,34 +1,33 @@
-import readlineSync from 'readline-sync';
-import welcome from '../';
-import randomNumber from '../random-number';
+import flow from '../';
 
-export default () => {
-  welcome();
-  console.log('What is the result of the expression?\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  const calc = (operators, count) => {
-    if (count > 2) {
-      return console.log(`Congratulations, ${name}!`);
-    }
-    const num1 = randomNumber();
-    const num2 = randomNumber();
-    const operator = operators[count];
-    console.log(`Question: ${num1} ${operator} ${num2}`);
-    const answer = readlineSync.question('Your answer: ');
-    let result = 0;
-    if (operator === '+') {
-      result = num1 + num2;
-    } else if (operator === '-') {
-      result = num1 - num2;
-    } else if (operator === '*') {
-      result = num1 * num2;
-    }
-    if (result !== Number(answer)) {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
-    }
-    console.log('Correct!');
-    return calc(operators, count + 1);
+const gameFlow = () => {
+  const challenge = 'What is the result of the expression?\n';
+  const count = 3;
+  const game = () => {
+    const randomOperator = () => {
+      const random = Math.floor(Math.random() * ((4 - 1) + 1));
+      if (random === 1) {
+        return '+';
+      } else if (random === 2) {
+        return '-';
+      }
+      return '*';
+    };
+    const x = Math.floor(100 * Math.random());
+    const y = Math.floor(10 * Math.random());
+    const operator = randomOperator();
+    const getResult = (num1, num2, oper) => {
+      if (oper === '+') {
+        return num1 + num2;
+      } else if (oper === '-') {
+        return num1 - num2;
+      }
+      return num1 * num2;
+    };
+    const task = `${String(x)} ${operator} ${String(y)}`;
+    const result = getResult(x, y, operator);
+    return [task, result];
   };
-  return calc(['+', '-', '*'], 0);
+  flow(challenge, game, count);
 };
+export default gameFlow;
