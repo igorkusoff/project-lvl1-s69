@@ -1,27 +1,32 @@
-import readlineSync from 'readline-sync';
-import welcome from '../';
-import randomNumber from '../random-number';
-import getGcd from '../get-gcd';
+import flow from '../';
 
-export default () => {
-  welcome();
-  console.log('Find the greatest common divisor of given numbers.\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  const iter = (count) => {
-    if (count > 2) {
-      return console.log(`Congratulations, ${name}!`);
-    }
-    const num1 = randomNumber();
-    const num2 = randomNumber();
-    const result = getGcd(num1, num2);
-    console.log(`Question: ${num1} ${num2}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (result !== Number(answer)) {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
-    }
-    console.log('Correct!');
-    return iter(count + 1);
+const gameFlow = () => {
+  const challenge = 'Find the greatest common divisor of given numbers.\n';
+  const count = 3;
+  const game = () => {
+    const num1 = Math.floor(100 * Math.random());
+    const num2 = Math.floor(10 * Math.random());
+    const getGcd = (x, y) => {
+      let a = x;
+      let b = y;
+      if (a === 0 || b === 0) {
+        return b;
+      } else if (b === 0) {
+        return a;
+      }
+      while (a !== 0 && b !== 0) {
+        if (a >= b && b > 0) {
+          a %= b;
+        } else if (a < b && a > 0) {
+          b %= a;
+        }
+      }
+      return a + b;
+    };
+    const result = String(getGcd(num1, num2));
+    const task = `${String(num1)} ${String(num2)}`;
+    return [task, result];
   };
-  return iter(0);
+  flow(challenge, game, count);
 };
+export default gameFlow;
