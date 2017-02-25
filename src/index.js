@@ -7,15 +7,11 @@ const flow = (challenge, task, result, count) => {
   console.log(challenge);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-console.log(count);
-console.log(task);
-console.log(result);
   const questions = (task, result, count) => {
     if (count === 0) {
       // success
       return console.log(`Congratulations, ${name}!`);
     }
-    // const number = numbers[count];
     console.log(`Question: ${task}`);
     const answer = readlineSync.question('Your answer: ');
 
