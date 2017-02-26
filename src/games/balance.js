@@ -14,7 +14,7 @@ const gameFlow = () => {
       }
       return arrNum.join('');
     };
-    const result = String(balance(random));
+    const result = balance(random);
     const task = String(random);
     return [task, result];
   };
